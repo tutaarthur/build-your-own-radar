@@ -87,20 +87,68 @@ const Radar = function (size, radar) {
   function plotTexts(quadrantGroup, rings, quadrant) {
     rings.forEach(function (ring, i) {
       if (quadrant.order === 'first' || quadrant.order === 'fourth') {
-        quadrantGroup.append('text')
-          .attr('class', 'line-text')
+        quadrantGroup.append('text').call(tip)
+          .attr('class', 'line-text tooltip3')
           .attr('y', center() + 4)
           .attr('x', center() + (ringCalculator.getRadius(i) + ringCalculator.getRadius(i + 1)) / 2)
           .attr('text-anchor', 'middle')
-          .text(ring.name());
+          .text(ring.name()).append('div').attr('class', 'tooltip').style("opacity", 0).call(tip);
       } else {
-        quadrantGroup.append('text')
-          .attr('class', 'line-text')
+        quadrantGroup.append('text').call(tip)
+          .attr('class', 'line-text tooltip3')
           .attr('y', center() + 4)
           .attr('x', center() - (ringCalculator.getRadius(i) + ringCalculator.getRadius(i + 1)) / 2)
           .attr('text-anchor', 'middle')
-          .text(ring.name());
+          .text(ring.name())
+            .append('div').attr('class', 'tooltip').style("opacity", 0).call(tip);
+
+
       }
+
+
+
+
+
+
+    var mouseOver2 = function () {
+
+
+      d3.selectAll('.tooltip3').classed('highlight', true);
+
+      tip.show(d3.select(this).text(), d3.select(this));
+
+    };
+
+    var mouseOut2 = function () {
+
+        d3.selectAll('.tooltip3').classed('highlight', false);
+
+
+        tip.hide().style('left', 0).style('top', 0);
+    };
+
+
+//tip = tip().attr('class', 'd3-tip2').html(function(d) { return d; });
+
+/* Invoke the tip in the context of your visualization */
+d3.selectAll('.tooltip3').on('mouseover', mouseOver2).on('mouseout', mouseOut2);
+
+
+
+ /*   var mouseOver = function () {
+      d3.selectAll('g.blip-link').attr('opacity', 0.3);
+      group.attr('opacity', 1.0);
+      tip.show(blip.name(), group.node());
+    };
+
+    var mouseOut = function () {
+      d3.selectAll('g.blip-link').attr('opacity', 1.0);
+      blipListItem.selectAll('.blip-list-item').classed('highlight', false);
+      tip.hide().style('left', 0).style('top', 0);
+    };
+*/
+
+
     });
   }
 
@@ -562,8 +610,7 @@ const Radar = function (size, radar) {
 
 
 
-
-
+    
 
 
 
