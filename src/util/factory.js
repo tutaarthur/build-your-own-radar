@@ -95,7 +95,8 @@ const GoogleSheet = function (sheetReference, sheetName) {
                     if (!quadrants[blip.quadrant]) {
                         quadrants[blip.quadrant] = new Quadrant(_.capitalize(blip.quadrant));
                     }
-                    quadrants[blip.quadrant].add(new Blip(blip.name, ringMap[blip.ring], blip.isNew.toLowerCase() === 'true', blip.topic, blip.description))
+                    //quadrants[blip.quadrant].add(new Blip(blip.name, ringMap[blip.ring], blip.type.toLowerCase() === 'true', blip.topic, blip.description))
+                    quadrants[blip.quadrant].add(new Blip(blip.name, ringMap[blip.ring], blip.maturity, blip.topic, blip.description))
                 });
 
                 var radar = new Radar();
@@ -124,7 +125,7 @@ const GoogleSheet = function (sheetReference, sheetName) {
 
         plotLogo(content);
 
-        var bannerText = '<h1>Building your radar...</h1><p>Your Technology Radar will be available in just a few seconds</p>';
+        var bannerText = '<h1>Construindo seu radar...</h1><p>Seu radar tecnológico será disponibilizado em instantes</p>';
         plotBanner(content, bannerText);
         plotFooter(content);
 
@@ -153,7 +154,7 @@ var QueryParams = function (queryString) {
 
 const GoogleSheetInput = function () {
     var self = {};
-    
+
     self.build = function () {
         var queryParams = QueryParams(window.location.search.substring(1));
 
@@ -169,8 +170,7 @@ const GoogleSheetInput = function () {
 
             plotLogo(content);
 
-            var bannerText = '<div><h1>Build your own radar</h1><p>Once you\'ve <a href ="https://info.thoughtworks.com/visualize-your-tech-strategy.html">created your Radar</a>, you can use this service' +
-                ' to generate an <br />interactive version of your Technology Radar. Not sure how? <a href ="https://info.thoughtworks.com/visualize-your-tech-strategy-guide.html">Read this first.</a></p></div>';
+            var bannerText = '<h1>Construa seu próprio radar!</h1>';
 
             plotBanner(content, bannerText);
 
@@ -185,13 +185,13 @@ const GoogleSheetInput = function () {
 };
 
 function set_document_title() {
-    document.title = "Build your own Radar";
+    document.title = "Radar";
 }
 
 function plotLogo(content) {
     content.append('div')
         .attr('class', 'input-sheet__logo')
-        .html('<a href="https://www.thoughtworks.com"><img src="/images/tw-logo.png" / ></a>');
+        .html('<a href="https://www.arkhi.com.br"><img src="/images/tw-logo.png" / ></a>');
 }
 
 function plotFooter(content) {
@@ -221,7 +221,7 @@ function plotForm(content) {
     content.append('div')
         .attr('class', 'input-sheet__form')
         .append('p')
-        .html('<strong>Enter the URL of your <a href="https://info.thoughtworks.com/visualize-your-tech-strategy-guide.html#publish-byor-sheet" target="_blank">published</a> Google Sheet below…</strong>');
+        .html('<strong>Cole a URL da sua Planilha Google abaixo...</strong>');
 
     var form = content.select('.input-sheet__form').append('form')
         .attr('method', 'get');
@@ -229,16 +229,15 @@ function plotForm(content) {
     form.append('input')
         .attr('type', 'text')
         .attr('name', 'sheetId')
-        .attr('placeholder', 'e.g. https://docs.google.com/spreadsheets/d/1waDG0_W3-yNiAaUfxcZhTKvl7AUCgXwQw8mdPjCz86U/')
-        .attr('required','');
+        .attr('placeholder', 'e.g. https://docs.google.com/spreadsheets/d/1waDG0_W3-yNiAaUfxcZhTKvl7AUCgXwQw8mdPjCz86U/');
 
     form.append('button')
         .attr('type', 'submit')
         .append('a')
         .attr('class', 'button')
-        .text('Build my radar');
+        .text('Construir');
 
-    form.append('p').html("<a href='https://info.thoughtworks.com/visualize-your-tech-strategy-guide.html#faq'>Need help?</a>");
+    form.append('p').html("<a href='https://info.thoughtworks.com/visualize-your-tech-strategy-guide.html#faq'>Ajuda?</a>");
 }
 
 module.exports = GoogleSheetInput;
