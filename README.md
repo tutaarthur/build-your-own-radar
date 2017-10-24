@@ -2,11 +2,11 @@
 
 Uma biblioteca que gera um radar interativo, inspirado por [thoughtworks.com/radar](http://thoughtworks.com/radar).
 
-## How To Use
+## Como usar
 
 O modo mais fácil de utilizar esta aplicação é fornecer uma Planilha Google *publicada*, obedecendo as restrições abaixo.
 
-### Setting up your data
+### Montando seus dados
 
 Você precisa publicar seus dados para que o radar consiga ler e plotar.
 
@@ -20,12 +20,12 @@ Em relação às restrições, sua tabela deve ter as seguintes colunas:
 | Apache Kylin  | Experimentar | Plataformas              |    3     |   FALSE |Apache Kylin is an open source analytics solution ...   |
 | JSF           | Adotar   | Linguagens & Frameworks |    4     |   TRUE  |We continue to see teams run into trouble using JSF ... |
 
-Nome: Pode conter qualquer frase, correspondente ao nome da tecnologia.
-Ring: Deve conter 4 valores diferentes, normalmente utilizados os valores de Evitar, Avaliar, Experimentar e Adotar.
-Quadrant: Deve conter 4 valores difrentes, normalmente categorizando a tecnologia, como ferramenta, técnica, plataforma e linguagens & frameworks.
-Maturity: Deve conter um número de 1 a 4, especificando a maturidade da implementação daquela tecnologia.
-Visible: Recebe valores booleanos, estabelecendo as tecnologias que serão plotadas no radar.
-Description: Descrição geral de cada uma.
+* Nome: Pode conter qualquer frase, correspondente ao nome da tecnologia.
+* Ring: Deve conter 4 valores diferentes, normalmente utilizados os valores de Evitar, Avaliar, Experimentar e Adotar.
+* Quadrant: Deve conter 4 valores difrentes, normalmente categorizando a tecnologia, como ferramenta, técnica, plataforma e linguagens & frameworks.
+* Maturity: Deve conter um número de 1 a 4, especificando a maturidade da implementação daquela tecnologia.
+* Visible: Recebe valores booleanos, estabelecendo as tecnologias que serão plotadas no radar.
+* Description: Descrição geral de cada uma.
 
 
 Atenção: as linhas das colunas Quadrant e Ring são transformadas em maiúsculas, portanto não se preocupe em formatá-las.
