@@ -389,6 +389,9 @@ const Radar = function (size, radar) {
     return table.append('ul');
   }
 
+
+
+
   function calculateBlipCoordinates(blip, chance, minRadius, maxRadius, startAngle) {
     var adjustX = Math.sin(toRadian(startAngle)) - Math.cos(toRadian(startAngle));
     var adjustY = -Math.cos(toRadian(startAngle)) - Math.sin(toRadian(startAngle));
@@ -427,6 +430,9 @@ const Radar = function (size, radar) {
       .text(quadrant.name());
 
     blips = quadrant.blips();
+
+
+
     rings.forEach(function (ring, i) {
       var ringBlips = blips.filter(function (blip) {
         return blip.ring() == ring;
@@ -490,6 +496,11 @@ const Radar = function (size, radar) {
   }
 
   function drawBlipInCoordinates(blip, coordinates, order, quadrantGroup, ringList) {
+
+
+    if(blip.visible() == "FALSE"){
+  return;
+}
     var x = coordinates[0];
     var y = coordinates[1];
 
@@ -622,7 +633,7 @@ const Radar = function (size, radar) {
   function drawLegend(order) {
     removeRadarLegend();
 
-    var full_circleKey = "Maturidade Máxima";
+    var full_circleKey = "Maturidade Alta";
     var half_circleKey = "Maturidade Média";
     var empty_circleKey = "Maturidade Mínima";
 

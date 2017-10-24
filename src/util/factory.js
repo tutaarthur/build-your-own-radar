@@ -96,7 +96,7 @@ const GoogleSheet = function (sheetReference, sheetName) {
                         quadrants[blip.quadrant] = new Quadrant(_.capitalize(blip.quadrant));
                     }
                     //quadrants[blip.quadrant].add(new Blip(blip.name, ringMap[blip.ring], blip.type.toLowerCase() === 'true', blip.topic, blip.description))
-                    quadrants[blip.quadrant].add(new Blip(blip.name, ringMap[blip.ring], blip.maturity, blip.topic, blip.description))
+                    quadrants[blip.quadrant].add(new Blip(blip.name, ringMap[blip.ring], blip.maturity, blip.topic, blip.visible, blip.description))
                 });
 
                 var radar = new Radar();
@@ -125,7 +125,7 @@ const GoogleSheet = function (sheetReference, sheetName) {
 
         plotLogo(content);
 
-        var bannerText = '<h1>Construindo seu radar...</h1><p>Seu radar tecnológico será disponibilizado em instantes</p>';
+        var bannerText = '<h1>Montando seu radar...</h1><p>Seu radar tecnológico será disponibilizado em instantes</p>';
         plotBanner(content, bannerText);
         plotFooter(content);
 
@@ -170,7 +170,7 @@ const GoogleSheetInput = function () {
 
             plotLogo(content);
 
-            var bannerText = '<h1>Construa seu próprio radar!</h1>';
+            var bannerText = '<h1>Monte seu próprio radar!</h1>';
 
             plotBanner(content, bannerText);
 
