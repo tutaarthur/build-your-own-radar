@@ -1,66 +1,61 @@
 [![Build Status](https://travis-ci.org/thoughtworks/build-your-own-radar.svg?branch=master)](https://travis-ci.org/thoughtworks/build-your-own-radar)
 
-A library that generates an interactive radar, inspired by [thoughtworks.com/radar](http://thoughtworks.com/radar).
-
-## Demo
-
-You can see this in action at https://radar.thoughtworks.com. If you plug in [this data](https://docs.google.com/spreadsheets/d/1YXkrgV7Y6zShiPeyw4Y5_19QOfu5I6CyH5sGnbkEyiI/) you'll see [this visualization](https://radar.thoughtworks.com/?sheetId=1YXkrgV7Y6zShiPeyw4Y5_19QOfu5I6CyH5sGnbkEyiI). 
+Uma biblioteca que gera um radar interativo, inspirado por [thoughtworks.com/radar](http://thoughtworks.com/radar).
 
 ## How To Use
 
-The easiest way to use the app out of the box is to provide a *public* Google Sheet ID from which all the data will be fetched. You can enter that ID into the input field on the first page of the application, and your radar will be generated. The data must conform to the format below for the radar to be generated correctly.
+O modo mais fácil de utilizar esta aplicação é fornecer uma Planilha Google *publicada*, obedecendo as restrições abaixo.
 
 ### Setting up your data
 
-You need to make your data public in a form we can digest.
+Você precisa publicar seus dados para que o radar consiga ler e plotar.
 
-Create a Google Sheet. Give it at least the below column headers, and put in the content that you want:
+
+Em relação às restrições, sua tabela deve ter as seguintes colunas:
 
 | name          | ring   | quadrant               | maturity | visible | description                                             |
-|---------------|--------|------------------------|----------|---------|----------------------------------------------------------|
-| Composer      | adopt  | tools                  |    1     |   TRUE  |Although the idea of dependency management ...          |
-| Canary builds | trial  | techniques             |    2     |   TRUE  |Many projects have external code dependencies ...       |
-| Apache Kylin  | assess | platforms              |    3     |   FALSE |Apache Kylin is an open source analytics solution ...   |
-| JSF           | hold   | languages & frameworks |    4     |   TRUE  |We continue to see teams run into trouble using JSF ... |
+|---------------|--------|------------------------|----------|---------|---------------------------------------------------------|
+| Composer      | Adotar  | Ferramentas                  |    1     |   TRUE  |Although the idea of dependency management ...          |
+| Canary builds | Avaliar  | Técnicas             |    2     |   TRUE  |Many projects have external code dependencies ...       |
+| Apache Kylin  | Experimentar | Plataformas              |    3     |   FALSE |Apache Kylin is an open source analytics solution ...   |
+| JSF           | Adotar   | Linguagens & Frameworks |    4     |   TRUE  |We continue to see teams run into trouble using JSF ... |
 
-### Sharing the sheet
+Nome: Pode conter qualquer frase, correspondente ao nome da tecnologia.
+Ring: Deve conter 4 valores diferentes, normalmente utilizados os valores de Evitar, Avaliar, Experimentar e Adotar.
+Quadrant: Deve conter 4 valores difrentes, normalmente categorizando a tecnologia, como ferramenta, técnica, plataforma e linguagens & frameworks.
+Maturity: Deve conter um número de 1 a 4, especificando a maturidade da implementação daquela tecnologia.
+Visible: Recebe valores booleanos, estabelecendo as tecnologias que serão plotadas no radar.
+Description: Descrição geral de cada uma.
 
-* In Google sheets, go to 'File', choose 'Publish to the web...' and then click 'Publish'.
-* Close the 'Publish to the web' dialog.
-* Copy the URL of your editable sheet from the browser (Don't worry, this does not share the editable version). 
 
-The URL will be similar to [https://docs.google.com/spreadsheets/d/1waDG0_W3-yNiAaUfxcZhTKvl7AUCgXwQw8mdPjCz86U/edit](https://docs.google.com/spreadsheets/d/1waDG0_W3-yNiAaUfxcZhTKvl7AUCgXwQw8mdPjCz86U/edit). In theory we are only interested in the part between '/d/' and '/edit' but you can use the whole URL if you want.
+Atenção: as linhas das colunas Quadrant e Ring são transformadas em maiúsculas, portanto não se preocupe em formatá-las.
 
-### Building the radar
 
-Paste the URL in the input field on the home page.
+### Publicando a Planilha
 
-That's it!
+* Na sua planilha, vá em 'Arquivo', escolha 'Publicar na Web...' e clique click 'Publicar'.
+* Copie a URL da tabela do seu navegador (Não se preocupe, a publicação da planilha não a torna editável para todos).
 
-Note: the quadrants of the radar, and the order of the rings inside the radar will be drawn in the order they appear in your Google Sheet.
+A URL será parecida com [https://docs.google.com/spreadsheets/d/1waDG0_W3-yNiAaUfxcZhTKvl7AUCgXwQw8mdPjCz86U/edit](https://docs.google.com/spreadsheets/d/1waDG0_W3-yNiAaUfxcZhTKvl7AUCgXwQw8mdPjCz86U/edit). A única parte que importa para a aplicação executar devidamente é a parte entre '/d/' e '/edit', mas isso é tratado automaticamente.
 
-### More complex usage
+### Montando seu radar
 
-To create the data representation, you can use the Google Sheet [factory](/src/util/factory.js), or you can also insert all your data straight into the code.
+Depois de copiar a URL da sua planilha, só colá-la na caixa de texto da página inicial e clicar no botão para gerar.
 
-The app uses [Tabletop.js](https://github.com/jsoma/tabletop) to fetch the data from a Google Sheet, so refer to their documentation for more advanced interaction.  The input from the Google Sheet is sanitized by whitelisting HTML tags with [sanitize-html](https://github.com/punkave/sanitize-html).
+Nota: a ordem dos Quadrants e dos Rings será especificada pela mesma ordem que se encontram na planilha.
 
-The application uses [webpack](https://webpack.github.io/) to package dependencies and minify all .js and .scss files.
 
-## Contribute
-
-All tasks are defined in `package.json`.
+## Executando
 
 Pull requests are welcome; please write tests whenever possible. 
 Make sure you have nodejs installed.
 
-- `git clone git@github.com:thoughtworks/build-your-own-radar.git`
-- `npm install`
-- `npm test` - to run your tests
-- `npm run dev` - to run application in localhost:8080. This will watch the .js and .css files and rebuild on file changes
+- `git clone git@github.com:tuaarthur/build-your-own-radar.git`
+- `npm install`- instalando as dependências do pacote
+- `npm run dev` - para executar a aplicação no endereço localhost:8080.
 
-### Don't want to install node? Run with one line docker
+### Caso não tenha Node.JS instalado e prefira utilizar o docker
 
      $ docker run -p 8080:8080 -v $PWD:/app -w /app -it node:7.3.0 /bin/sh -c 'npm install && npm run dev'
 
-After building it will start on localhost:8080
+Depois de criado o container, o site estará disponível também em localhost:8080
