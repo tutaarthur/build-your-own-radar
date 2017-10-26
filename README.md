@@ -1,4 +1,4 @@
-Uma biblioteca que gera um radar interativo, inspirado por [thoughtworks.com/radar](http://thoughtworks.com/radar).
+Biblioteca geradora de um radar interativo, inspirado por [thoughtworks.com/radar](http://thoughtworks.com/radar).
 
 ## Como usar
 
