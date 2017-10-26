@@ -61,15 +61,15 @@ Depois de criado o container, o site estará disponível também em localhost:80
 
 ## Termos
 
-###Maturidade
+### Maturidade
 
-* Baixa (1): reflete tecnologias que ainda não estão em uso geral, nem em projetos nem em testes.
-* Média (2-3): tecnologias que são utiizadas em algum projeto, mas ainda não totalmente dominadas ou amplamente exploradas pelo time.
-* Alta (4): tecnologias que são utilizadas em larga escala, com alto entendimento de seu funcionamento pelo time e amplamente explorada.
+* *Baixa (1)*: reflete tecnologias que ainda não estão em uso geral, nem em projetos nem em testes.
+* *Média (2-3)*: tecnologias que são utiizadas em algum projeto, mas ainda não totalmente dominadas ou amplamente exploradas pelo time.
+* *Alta (4)*: tecnologias que são utilizadas em larga escala, com alto entendimento de seu funcionamento pelo time e amplamente explorada.
 
-###Rings
+### Rings
 
-* Adotar: tecnologias que devem ser adotadas pelo time a fim de aumentar a produtividade ou simplificar o desenvolvimento de algum projeto.
-* Experimentar: tecnologia que foi analisada e deve ser testada pelo time, verificando se a mesma se encaixa ou não no padrão de desenvolvimento.
-* Avaliar: tecnologia que deve ser amplamente avaliada para a adoção, definição normalmente utilizada para grandes mudanças que requerem uma análise mais profunda de seu impacto. Ex: Plataforma, Framework.
-* Evitar: tecnologias já avaliadas/experimentadas/adotadas que não satisfizeram todas as necessidades ou trouxeram uma grande variedade de problemas em sua implementação. Também se encaixam aqui as que não se adequam ao objetivo do time.
+* *Adotar*: tecnologias que devem ser adotadas pelo time a fim de aumentar a produtividade ou simplificar o desenvolvimento de algum projeto.
+* *Experimentar*: tecnologia que foi analisada e deve ser testada pelo time, verificando se a mesma se encaixa ou não no padrão de desenvolvimento.
+* *Avaliar*: tecnologia que deve ser amplamente avaliada para a adoção, definição normalmente utilizada para grandes mudanças que requerem uma análise mais profunda de seu impacto. Ex: Plataforma, Framework.
+* *Evitar*: tecnologias já avaliadas/experimentadas/adotadas que não satisfizeram todas as necessidades ou trouxeram uma grande variedade de problemas em sua implementação. Também se encaixam aqui as que não se adequam ao objetivo do time.
