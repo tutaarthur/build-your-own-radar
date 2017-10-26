@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/thoughtworks/build-your-own-radar.svg?branch=master)](https://travis-ci.org/thoughtworks/build-your-own-radar)
-
 Uma biblioteca que gera um radar interativo, inspirado por [thoughtworks.com/radar](http://thoughtworks.com/radar).
 
 ## Como usar
@@ -15,10 +13,10 @@ Em relação às restrições, sua tabela deve ter as seguintes colunas:
 
 | name          | ring   | quadrant               | maturity | visible | description                                             |
 |---------------|--------|------------------------|----------|---------|---------------------------------------------------------|
-| Composer      | Adotar  | Ferramentas                  |    1     |   TRUE  |Although the idea of dependency management ...          |
-| Canary builds | Avaliar  | Técnicas             |    2     |   TRUE  |Many projects have external code dependencies ...       |
-| Apache Kylin  | Experimentar | Plataformas              |    3     |   FALSE |Apache Kylin is an open source analytics solution ...   |
-| JSF           | Adotar   | Linguagens & Frameworks |    4     |   TRUE  |We continue to see teams run into trouble using JSF ... |
+| Composer      | Adotar  | Ferramentas                  |    1     |   TRUE  |O Composer é um gerenciador de  ...          |
+| Canary builds | Avaliar  | Técnicas             |    2     |   TRUE  |Um gerenciador de dependências externas ao código ...       |
+| Apache Kylin  | Experimentar | Plataformas              |    3     |   FALSE |Apache Kylin é uma solução de análise ...   |
+| C#           | Adotar   | Linguagens & Frameworks |    4     |   TRUE  |C# é uma linguagem de programação projetada para criar ... |
 
 * Nome: Pode conter qualquer frase, correspondente ao nome da tecnologia.
 * Ring: Deve conter 4 valores diferentes, normalmente utilizados os valores de Evitar, Avaliar, Experimentar e Adotar.
