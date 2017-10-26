@@ -229,15 +229,15 @@ function plotForm(content) {
     form.append('input')
         .attr('type', 'text')
         .attr('name', 'sheetId')
-        .attr('placeholder', 'e.g. https://docs.google.com/spreadsheets/d/1waDG0_W3-yNiAaUfxcZhTKvl7AUCgXwQw8mdPjCz86U/');
+        .attr('placeholder', 'ex. https://docs.google.com/spreadsheets/d/1waDG0_W3-yNiAaUfxcZhTKvl7AUCgXwQw8mdPjCz86U/');
 
     form.append('button')
         .attr('type', 'submit')
         .append('a')
         .attr('class', 'button')
-        .text('Construir');
+        .text('Montar');
 
-    form.append('p').html("<a href='https://info.thoughtworks.com/visualize-your-tech-strategy-guide.html#faq'>Ajuda?</a>");
+    form.append('p').html("<a href='https://github.com/tutaarthur/build-your-own-radar'>Ajuda?</a>");
 }
 
 module.exports = GoogleSheetInput;
