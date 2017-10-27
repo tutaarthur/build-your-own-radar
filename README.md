@@ -42,6 +42,8 @@ Depois de copiar a URL da sua planilha, só colá-la na caixa de texto da págin
 
 Nota: a ordem dos Quadrants e dos Rings será especificada pela mesma ordem que se encontram na planilha.
 
+Caso queira mudar o texto das tooltips mostradas na descrição dos Rings, o arquivo se encontra em utils/parameters.js.
+
 
 ## Executando
 

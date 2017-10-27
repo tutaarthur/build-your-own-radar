@@ -1,3 +1,6 @@
+const param = require('../util/parameters');
+var parameters = new param();
+
 const d3 = require('d3');
 const d3tip = require('d3-tip');
 const d3tip2 = require('d3-tip');
@@ -155,7 +158,23 @@ const Radar = function (size, radar) {
       tip2.hide().style('left', 0).style('top', 0);
 
       //d3.select(".d3-tip").style('top', d3.select(this).style('top')).style('left', d3.select(this).style('left'));
-      tip2.show(d3.select(this).text(), d3.select(this));
+      var text ="";
+      switch (d3.select(this).text()){
+        case "Evitar":
+          text = parameters.evitar_tooltip;
+        break;
+        case "Avaliar":
+          text = parameters.avaliar_tooltip;
+        break;
+        case "Experimentar":
+          text = parameters.experimentar_tooltip;
+        break;
+        case "Adotar":
+          text = parameters.adotar_tooltip;
+        break;
+
+      }
+      tip2.show(text, d3.select(this));
 
     };
 
@@ -457,7 +476,7 @@ d3.selectAll('.tooltip').on('mouseover', mouseOver2).on('mouseout', mouseOut2);
       blipListItem.selectAll('.blip-list-item').classed('highlight', false);
       tip.hide().style('left', 0).style('top', 0);
     };
-5
+
     blipListItem.on('mouseover', mouseOver).on('mouseout', mouseOut);
     group.on('mouseover', mouseOver).on('mouseout', mouseOut);
 
