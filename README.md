@@ -64,6 +64,8 @@ array_tabela = [
 
 Mas lembre-se de incluir 4 quadrantes, no exemplo acima, só há 2, Ferramenta e Plataforma.
 
+Salvando a planilha em .csv e convertendo-a no site http://www.convertcsv.com/csv-to-json.htm selecionando a opção CSV To JSON Array, a saída é exatamente o que é preciso para montar o radar, basta colocá-la na variável `array_table` no arquivo `utils/parameters.js`.
+
 ## Executando
 
 Verifique se você possui a versão mais recente do Node.JS para executar os comandos abaixo.
