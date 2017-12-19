@@ -38,12 +38,31 @@ A URL será parecida com [https://docs.google.com/spreadsheets/d/1waDG0_W3-yNiAa
 
 ### Montando seu radar
 
+##### Utilizando Google Sheets
+
 Depois de copiar a URL da sua planilha, só colá-la na caixa de texto da página inicial e clicar no botão para gerar.
 
 Nota: a ordem dos Quadrants e dos Rings será especificada pela mesma ordem que se encontram na planilha.
 
-Caso queira mudar o texto das tooltips mostradas na descrição dos Rings, o arquivo se encontra em utils/parameters.js.
+Caso queira mudar o texto das tooltips mostradas na descrição dos Rings, o arquivo se encontra em `utils/parameters.js`.
 
+##### Utilizando dados locais
+
+No arquivo `utils/parameters.js` há uma flag chamada `google_sheet`, que especifica para o programa a página inicial a ser mostrada. Caso `true`, será mostrada a página padrão, requisitando a URL para a montagem do radar. Caso `false`, os dados utilizados são os armazenados na variável `array_tabela` dentro do mesmo arquivo.
+
+O formato dos dados dessa variável deve seguir o seguinte exemplo:
+
+```sh
+array_tabela = [
+["name","ring","quadrant","maturity","visible","description"  ],
+["App Dynamycs APM ","Adotar","Ferramenta","4","TRUE","Descrição"  ],
+["PowerBI","Experimentar","Ferramenta","3","TRUE","Descrição"  ],
+["AWS ","Experimentar","Plataforma","2","TRUE","Descrição"  ],
+["Alteryx","Avaliar","Ferramenta","1","TRUE","Descrição"  ]
+]  
+```
+
+Mas lembre-se de incluir 4 quadrantes, no exemplo acima, só há 2, Ferramenta e Plataforma.
 
 ## Executando
 

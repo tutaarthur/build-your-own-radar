@@ -237,6 +237,7 @@ function plotForm(content) {
         .attr('class', 'button')
         .text('Montar');
 
+   
     form.append('p').html("<a href='https://github.com/tutaarthur/build-your-own-radar'>Ajuda?</a>");
 }
 
