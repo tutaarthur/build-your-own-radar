@@ -11,7 +11,7 @@ Você precisa publicar seus dados para que o radar consiga ler e plotar.
 
 Em relação às restrições, sua tabela deve ter as seguintes colunas:
 
-| name          | ring   | quadrant               | maturity | visible | description                                             |
+| name          | ring   | quadrant               | mat*urity | visible | description                                             |
 |---------------|--------|------------------------|----------|---------|---------------------------------------------------------|
 | Composer      | Adotar  | Ferramentas                  |    1     |   TRUE  |O Composer é um gerenciador de  ...          |
 | Canary builds | Avaliar  | Técnicas             |    2     |   TRUE  |Um gerenciador de dependências externas ao código ...       |
@@ -79,6 +79,15 @@ Verifique se você possui a versão mais recente do Node.JS para executar os com
      $ docker run -p 8080:8080 -v $PWD:/app -w /app -it node:7.3.0 /bin/sh -c 'npm install && npm run dev'
 
 Depois de criado o container, o site estará disponível também em localhost:8080
+
+### Caso prefira criar uma imagem com o código
+
+     $ git clone https://github.com/tutaarthur/build-your-own-radar
+     $ cd build-your-own-radar
+     $ docker build -t nome_da_imagem .
+     $ docker run nome_da_imagem
+
+Depois de criado o container, será necessário rodá-lo para que o site esteja disponível. Como especificado, será feita a ligação entre as duas portas 8080, tanto a do container quanto a do host. Por isso, para acessar, basta entrar no endereço localhost:8080.
 
 ## Termos
 
